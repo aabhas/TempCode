@@ -1,0 +1,121 @@
+<!DOCTYPE HTML>
+<!-- Code Author: Aabhas Sharma -->
+
+<html>
+	<head>
+		<title>Design Mockup</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+		<script src="js/jquery.min.js"></script>
+		<script src="js/jquery.scrollzer.min.js"></script>
+		<script src="js/jquery.scrolly.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<script src="main.js"></script>
+		<link rel="shortcut icon" href="favicon_4.ico" type="image/x-icon">
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+		
+	</head>
+	<body>
+		<div id="wrapper">
+
+				<!-- LogIn Form -->
+				<section id="four">
+					<div class="container">
+						<br><br><br><br>
+						<h2><font color= "#F0B823">Bearing Finder</font></h2>
+
+						<form name="login_form" id="login_form" action="javascript:send_info()">
+							<div class="row uniform collapse-at-2">
+								<p><font color= "#003366">Ident</font></p>
+								<div class="6u"><input type="text" name="ident" id="ident" placeholder="ex., abc" /></div>
+							</div>
+							<div class="row uniform collapse-at-2">
+								<p><font color= "#003366">Bearing Type</font></p>
+								<div class="6u">
+									<select name = "b_type" id = "b_type" placeholder = "ex., needle">
+										<option value="Needle">Needle</option>
+										<option value="Ball">Ball</option>
+										<option value="Roller">Roller</option>
+									</select>
+								</div>
+							</div>
+							<div class="row uniform collapse-at-2">
+								<p><font color= "#003366">Number of rows</font></p>
+								<div class="6u">
+									<select name="num_rows" id="num_rows" placeholder = "ex., 1">
+										<option value="1">1</option>
+  										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+									</select>
+								</div>
+							</div>
+							<div class="row uniform collapse-at-2">
+								<p><font color= "#003366">Bearing radial load</font></p>
+								<p><font color= "#003366">N</font></p>
+								<p><font color= "#003366">Required</font></p>
+								<div class="6u"><input type="text" name="rad_ld" id="rad_ld" placeholder="100" /></div>
+							</div>
+							<div class="row uniform collapse-at-2">
+								<p><font color= "#003366">Bearing Speed</font></p>
+								<p><font color= "#003366">rpm</font></p>
+								<p><font color= "#003366">Required</font></p>
+								<div class="6u"><input type="text" name="b_speed" id="b_speed" placeholder="1000" /></div>
+							</div>
+							<div class="row uniform collapse-at-2">
+								<p><font color= "#003366">Min B10 life</font></p>
+								<p><font color= "#003366">hours</font></p>
+								<p><font color= "#003366">Required</font></p>
+								<div class="6u"><input type="text" name="min_b10" id="min_b10" placeholder="10000" /></div>
+							</div>
+							<div class="row uniform collapse-at-2">
+								<p><font color= "#003366">Max Outside Diameter</font></p>
+								<p><font color= "#003366">mm</font></p>
+								<p><font color= "#003366">Optional</font></p>
+								<div class="6u"><input type="text" name="max_od" id="max_od" placeholder="0.0000" /></div>
+							</div>
+							<div class="row uniform collapse-at-2">
+								<p><font color= "#003366">Minimum Inside Diameter</font></p>
+								<p><font color= "#003366">mm</font></p>
+								<p><font color= "#003366">Optional</font></p>
+								<div class="6u"><input type="text" name="min_id" id="min_id" placeholder="0.0000" /></div>
+							</div>
+							<div class="row uniform collapse-at-2">
+								<p><font color= "#003366">Maximum Width</font></p>
+								<p><font color= "#003366">mm</font></p>
+								<p><font color= "#003366">Optional</font></p>
+								<div class="6u"><input type="text" name="max_width" id="max_width" placeholder="0.0000" /></div>
+							</div>
+							<div class="row uniform">
+								<div class="12u">
+									<ul class="actions">
+										<li>
+											<input type="submit" name="calc_button" id="calc_button" class="special" value="Calculate"/>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</form>
+					</div>
+				</section>
+		</div>
+
+		<!-- When redirected from other php pages, behave accordingly -->
+		<script>
+			//redirected from signup_form.php when username already exists
+			if ( getUrlParameter("exists") == 13 )
+				alert("Sorry, that username already exists.");
+			//redirected from signup_form.php when username is available
+			else if(getUrlParameter("exists") == 7)
+				alert("User created successfully, login to continue!");
+		</script>
+	</body>
+</html>

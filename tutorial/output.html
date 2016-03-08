@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<!-- Code Author: Aabhas Sharma -->
+
+<html>
+<head>
+	<meta content="text/html, initial-scale=1.0, user-scalable=yes; charset=utf-8" http-equiv="Content-Type" />
+	<title>Design Mockup</title>
+	<meta content="" name="description" />
+	<meta content="" name="keywords" /><!--[if lte IE 8]><script src="css/ie/html5shiv.js"></script><![endif]-->
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.scrollzer.min.js"></script>
+	<script src="js/jquery.scrolly.min.js"></script>
+	<script src="js/skel.min.js"></script>
+	<script src="js/skel-layers.min.js"></script>
+	<script src="js/init.js"></script>
+	<link href="favicon_4.ico" rel="shortcut icon" type="image/x-icon" />
+	<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript><!--[if lte IE 8]><link rel="stylesheet" href="css/ie/v8.css" /><![endif]-->
+	<style type="text/css">
+	    html, body, #map-canvas { height: 750px; margin: 0; padding: 20px;}
+	</style>
+	<script src="main.js"></script>
+</head>
+
+<body>
+	<div>
+			<h3><font color = "#F0B823">Output</font></h3>
+		</div>
+		<div style="overflow:auto; height:500px; width:895px">
+		<table id="recvr_li">
+		<tr>
+			<th>Part #</th>
+			<th>B10 Life Hours</th>
+			<th></th>
+			<th>OD (mm)</th>
+			<th>ID (mm)</th>
+			<th>Width (mm)</th>
+		</tr>
+		<script>
+			var all_recvr = JSON.parse(localStorage["Receiver_list"]);
+			for (var i = 0; i < all_recvr.length; i++) {
+				$("#recvr_li").append('<tr>' + '<td>' + all_recvr[i][0] + '</td>' + '<td>' + all_recvr[i][4] + '</td>' + '<td>' + '</td>'+ '<td>' + all_recvr[i][1] + '</td>' + '<td>' + all_recvr[i][2] + '</td>' + '<td>' + all_recvr[i][3] + '</td>' +'</tr>');
+			};
+		</script>
+		</table>
+		</div>
+</body>
